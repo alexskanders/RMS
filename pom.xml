@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.skanders.rms</groupId>
-    <artifactId>RMS</artifactId>
+    <artifactId>rms</artifactId>
     <version>0.8.1-SNAPSHOT</version>
 
     <name>RMS</name>
