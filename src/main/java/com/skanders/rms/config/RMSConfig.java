@@ -20,6 +20,8 @@ package com.skanders.rms.config;
 
 import com.skanders.jbel.config.Config;
 import com.skanders.jbel.def.Verify;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nonnull;
 import javax.ws.rs.core.UriBuilder;
@@ -39,6 +41,8 @@ import java.util.Map;
  */
 public class RMSConfig
 {
+    private static final Logger LOG = LoggerFactory.getLogger(RMSConfig.class);
+
     private String  uriScheme;
     private String  uriHostName;
     private Integer uriPort;
@@ -90,6 +94,12 @@ public class RMSConfig
         setSSLEngineConfig(prop);
         setDatabaseConfig(prop);
         setCORSConfig(prop);
+
+        LOG.info("Config Options");
+        LOG.info("URI : " + buildServiceUri());
+        LOG.info("SSL : " + sslType.name());
+        LOG.info("DB  : " + dbType.name());
+        LOG.info("CORS: " + corsType.name());
     }
 
     /**

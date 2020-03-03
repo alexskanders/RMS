@@ -8,3 +8,4 @@ out
 *.releaseBackup
 *.versionsBackup
 *.properties
+.DS_Store
