@@ -6,7 +6,7 @@
 
     <groupId>com.skanders.rms</groupId>
     <artifactId>rms</artifactId>
-    <version>0.9.0-SNAPSHOT</version>
+    <version>0.9.1-SNAPSHOT</version>
 
     <name>RMS</name>
     <description>Rapid Microservice: A library for quickly developing microservices</description>
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.skanders.jbel</groupId>
             <artifactId>jbel</artifactId>
-            <version>0.9.0-SNAPSHOT</version>
+            <version>0.9.0</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>

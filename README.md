@@ -2,23 +2,23 @@
 
 ## Rapid MicroService
 
-[![license badge](https://img.shields.io/github/license/alexskanders/RapidMicroService?logo=apache)](https://github.com/alexskanders/RapidMicroService/blob/master/LICENSE)
+[![license badge](https://img.shields.io/github/license/alexskanders/RMS?logo=apache)](https://github.com/alexskanders/RMS/blob/master/LICENSE)
 [![Maven Central](https://img.shields.io/maven-central/v/com.skanders.rms/rms.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.skanders.rms%22%20AND%20a:%22rms%22)
 [![javadoc](https://javadoc.io/badge2/com.skanders.rms/rms/javadoc.svg)](https://javadoc.io/doc/com.skanders.rms/rms)
 
 Maven:
 
 ~~~xml
-<dependency>
-    <groupId>com.skanders.rms</groupId>
-    <artifactId>rms</artifactId>
-    <version>0.8.0</version>
-</dependency>
+    <dependency>
+        <groupId>com.skanders.rms</groupId>
+        <artifactId>rms</artifactId>
+        <version>0.9.0</version>
+    </dependency>
 ~~~
 
 Gradle:
 ~~~javascript
-implementation 'com.skanders.rms:rms:0.8.0'
+    implementation 'com.skanders.rms:rms:0.9.0'
 ~~~
 
 ## 
