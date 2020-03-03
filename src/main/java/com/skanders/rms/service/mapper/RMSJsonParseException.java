@@ -17,8 +17,8 @@
 package com.skanders.rms.service.mapper;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.skanders.commons.def.SkandersResult;
-import com.skanders.commons.model.ResponseModel;
+import com.skanders.jbel.def.SkandersResult;
+import com.skanders.jbel.model.ResponseModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

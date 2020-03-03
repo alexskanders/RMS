@@ -17,10 +17,10 @@
 
 package com.skanders.rms.service;
 
-import com.skanders.commons.atsql.AtSQL;
-import com.skanders.commons.atsql.AtSQLFactory;
-import com.skanders.commons.def.LogPattern;
-import com.skanders.commons.def.Verify;
+import com.skanders.jbel.atsql.AtSQL;
+import com.skanders.jbel.atsql.AtSQLFactory;
+import com.skanders.jbel.def.LogPattern;
+import com.skanders.jbel.def.Verify;
 import com.skanders.rms.config.RMSConfig;
 import com.skanders.rms.def.RMSException;
 import org.glassfish.grizzly.GrizzlyFuture;

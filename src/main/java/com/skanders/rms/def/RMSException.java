@@ -16,7 +16,7 @@
 
 package com.skanders.rms.def;
 
-import com.skanders.commons.def.SkandersException;
+import com.skanders.jbel.def.SkandersException;
 
 public class RMSException extends SkandersException
 {

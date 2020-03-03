@@ -18,8 +18,8 @@
 package com.skanders.rms.config;
 
 
-import com.skanders.commons.config.Config;
-import com.skanders.commons.def.Verify;
+import com.skanders.jbel.config.Config;
+import com.skanders.jbel.def.Verify;
 
 import javax.annotation.Nonnull;
 import javax.ws.rs.core.UriBuilder;
