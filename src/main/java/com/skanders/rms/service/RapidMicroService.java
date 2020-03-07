@@ -46,6 +46,7 @@ public abstract class RapidMicroService
 
     private AtSQL      atSQL;
     private HttpServer server;
+    private boolean    webSocketEnabled = false;
 
     /**
      * Constructs an instance of RapidMicroService.
@@ -103,6 +104,19 @@ public abstract class RapidMicroService
     }
 
     /**
+     * Enables WebSocket attachment
+     */
+    public void enableWebSocket()
+    {
+        WebSocketAddOn webSocketAddOn = new WebSocketAddOn();
+
+        for (NetworkListener networkListener : server.getListeners())
+            networkListener.registerAddOn(webSocketAddOn);
+
+        this.webSocketEnabled = true;
+    }
+
+    /**
      * Registers {@link WebSocketApplication} with the server at the given
      * contextPath and urlLogPattern
      *
@@ -111,25 +125,31 @@ public abstract class RapidMicroService
      * @param app         an instance of WebSocketApplication
      * @see WebSocketApplication
      */
-    public void registerWebSocket(
+    public void registerWebSocketApp(
             @Nonnull String contextPath, @Nonnull String urlPattern, @Nonnull WebSocketApplication app)
     {
-        Verify.notTrue(server.isStarted(), "cannot add WebSocket after server has started!");
+        Verify.isTrue(webSocketEnabled, "WebSocket must be enabled before registering, use: enableWebSocket()");
 
         Verify.notNull(contextPath, "config cannot be null");
         Verify.notNull(urlPattern, "urlLogPattern cannot be null");
         Verify.notNull(app, "app cannot be null");
 
-        LOG.info(LogPattern.INIT, "WebSocket Attachment");
-
-        WebSocketAddOn webSocketAddOn = new WebSocketAddOn();
-
-        for (NetworkListener networkListener : server.getListeners())
-            networkListener.registerAddOn(webSocketAddOn);
-
         WebSocketEngine.getEngine().register(contextPath, urlPattern, app);
+    }
 
-        LOG.info(LogPattern.INIT_DONE, "WebSocket Attachment");
+    /**
+     * Unregister {@link WebSocketApplication} from the server
+     *
+     * @param app an instance of WebSocketApplication
+     * @see WebSocketApplication
+     */
+    public void unregisterWebSocketApp(@Nonnull WebSocketApplication app)
+    {
+        Verify.isTrue(webSocketEnabled, "WebSocket must be enabled before unregistering, use: enableWebSocket()");
+
+        Verify.notNull(app, "app cannot be null");
+
+        WebSocketEngine.getEngine().unregister(app);
     }
 
     /**
